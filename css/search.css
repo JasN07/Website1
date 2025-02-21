@@ -1,0 +1,32 @@
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background: #fcd7fb; /*To blend two colors: linear-gradient(90deg, color, color);*/
+    display: flex; /* uses Flexbox which responds to different screen sizes*/
+    align-items: center; /*Vertically center*/
+    justify-content: center; /*Horrizontally center*/
+    height: 100vh; /*Setting body heigh to 100%: remember!*/
+margin: 0; /*gets rid of side scroll bar*/
+}
+
+.search .input{ /*input*/
+    height: 50px;
+    width: 200px;
+    font-size: 18px;
+    padding: 15px;
+    border 0; /*gets rid of border*/
+    background-color: LavenderBlush;
+}
+
+.btn{
+    background-color: white;
+    border: 0;
+    font-size: 24px;
+    height: 50px;
+    width: 50px;
+}
