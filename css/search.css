@@ -14,6 +14,14 @@ body {
 margin: 0; /*gets rid of side scroll bar*/
 }
 
+.search{
+   position: relative;
+   height: 50px;
+}
+
+
+
+
 .search .input{ /*input*/
     height: 50px;
     width: 200px;
@@ -21,6 +29,7 @@ margin: 0; /*gets rid of side scroll bar*/
     padding: 15px;
     border 0; /*gets rid of border*/
     background-color: LavenderBlush;
+    transition: width 1s ease;
 }
 
 .btn{
@@ -29,4 +38,23 @@ margin: 0; /*gets rid of side scroll bar*/
     font-size: 24px;
     height: 50px;
     width: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 1s ease;
+}
+
+
+.search.active .input {
+width: 200px;
+}
+
+.search.active .btn {
+    transform: translateX(198px);
+}
+
+
+.btn.focus, input:focus{
+    outline: none;
 }
