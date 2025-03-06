@@ -6,15 +6,15 @@
 
 
 body {
-    background: #fcd7fb; /*To blend two colors: linear-gradient(90deg, color, color);*/
+    background-color: #fcd7fb; /*To blend two colors: linear-gradient(90deg, color, color);*/
     display: flex; /* uses Flexbox which responds to different screen sizes*/
     align-items: center; /*Vertically center*/
     justify-content: center; /*Horrizontally center*/
-    height: 100vh; /*Setting body heigh to 100%: remember!*/
-margin: 0; /*gets rid of side scroll bar*/
+    height: 100vh; /*Setting body height to 100%: remember!*/
+    margin: 0; /*gets rid of side scroll bar*/
 }
 
-.search{
+.search {
    position: relative;
    height: 50px;
 }
@@ -24,15 +24,15 @@ margin: 0; /*gets rid of side scroll bar*/
 
 .search .input{ /*input*/
     height: 50px;
-    width: 200px;
+    width: 50px;
     font-size: 18px;
     padding: 15px;
-    border 0; /*gets rid of border*/
+    border: 0; /*gets rid of border*/
     background-color: LavenderBlush;
     transition: width 1s ease;
 }
 
-.btn{
+.search .btn{
     background-color: white;
     border: 0;
     font-size: 24px;
@@ -41,7 +41,7 @@ margin: 0; /*gets rid of side scroll bar*/
     cursor: pointer;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0px;
     transition: transform 1s ease;
 }
 
@@ -55,6 +55,7 @@ width: 200px;
 }
 
 
-.btn.focus, input:focus{
+.search .input:focus{
     outline: none;
 }
+
