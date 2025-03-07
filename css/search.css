@@ -22,9 +22,9 @@ body {
 
 
 
-.search .input{ /*input*/
+.search .input { /*input*/
     height: 50px;
-    width: 50px;
+    width: 50px; /*200*/
     font-size: 18px;
     padding: 15px;
     border: 0; /*gets rid of border*/
@@ -55,7 +55,7 @@ width: 200px;
 }
 
 
-.search .input:focus{
+.search .input:focus {
     outline: none;
 }
 
