@@ -10,4 +10,5 @@ text.innerHTML = "Double click me to change me back"
 
 btn.addEventListener('dblclick', ()=>{
     colorChange.style.backgroundColor = "Lavender"
+    text.innerHTML = "Click me!"
 })
