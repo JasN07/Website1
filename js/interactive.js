@@ -4,7 +4,7 @@ const text = document.getElementById('text')
 
 
 btn.addEventListener('click', ()=>{
-colorChange.style.backgroundColor = "pink"
+backgroundColor = "pink"
 text.innerHTML = "Double click me to change me back"
 })
 
