@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: Lavender;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.heart {
+    position: relative;
+    height: 50px;
+}
+
+.heart .btn{
+    background-color: white;
+    border: 0;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.text {
+    color: OldLace;
+    top: 500px;
+}
+
