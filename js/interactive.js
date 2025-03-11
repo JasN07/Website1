@@ -1,11 +1,11 @@
 const btn = document.querySelector('.btn')
 const colorChange = document.getElementById('colorChange')
-
+const text = document.getElementById('text')
 
 
 btn.addEventListener('click', ()=>{
 colorChange.style.backgroundColor = "pink"
-colorChange.innerHTML = "Double click me to change me back"
+text.innerHTML = "Double click me to change me back"
 })
 
 btn.addEventListener('dblclick', ()=>{
