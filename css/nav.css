@@ -42,8 +42,20 @@ body {
     text-decoration: none;
 }
 
+.nav.active {
+    background-color: white;
+}
+
+.nav.active a {
+    color: black;
+}
+
+.nav.active .container {
+    padding: 10px 0;
+}
+
 .hero {
-    
+
     background-image: url('../images/website background nav.avif');
     background-repeat: no-repeat;
     background-size: color;
