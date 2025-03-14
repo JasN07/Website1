@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: '', sans-serif;
+    color: pink;
+    padding-bottom: 50px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav {
+    position: fixed;
+
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav a {
+    color: white
+    padding: 7px 15px;
+    text-decoration: none;
+}
+
+.hero {
+    background-image: url('../images/website background nav.avif');
+    background-repeat: no-repeat;
+    background-size: color;
+    background-position: bottom center;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom:
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin: -20px 0 20px;
+    z-index: 100;
+}
+
+.hero p {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.content h2, .content h3 {
+    font-size: 150%;
+    margin: 20px 0;
+}
+
+.content p {
+    color: pink;
+    line-height: 30px;
+    letter-spacing: 1.2px;
+}

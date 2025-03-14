@@ -1,6 +1,4 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -9,11 +7,24 @@
 body {
     background-color: pink;
     display: flex;
-    algin-items: center;
+    align-items: center;
     justify-content: center;
     height: 100vh;
+    margin: 0;
 }
 
 .btn {
-font-family: '',
+    background-color: Lavender;
+font-family: "Montserrat", sans-serif;
+font-size: 1.2rem;
+padding: 1.5rem 3rem;
+margin: 1rem;
+border-radius: 5px;
+border: none;
+color: white;
+cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
 }
