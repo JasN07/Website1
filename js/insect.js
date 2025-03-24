@@ -84,4 +84,8 @@ const y = Math.random() * (height - 200) + 100
 return{x, y}
 }
 
-
+function message() {
+if(score = 10) {
+add(.visible)
+    }
+}
