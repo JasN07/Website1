@@ -68,11 +68,13 @@ justify-content: center;
     color: white;
     cursor: pointer;
     font-family: inherit;
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
+    width: 150px;
+    height: 150px;
 }
 
+.choose-insect-btn:hover {
+    
+}
 .choose-insect-btn.png {
 
 }
