@@ -31,27 +31,29 @@ choose_insect_btns.forEach(btn => {
 
 function startGame() {
     setInterval(increaseTime, 1000)
-
 }
 
 
 function increaseTime() {
     let s = seconds % 60
     let m = Math.floor(seconds / 60)
-    if (s < 10){
-        s = `0${m}
+    if (s < 10) {
+        s = `0${m}`
     }
-    timeEl.innerHTML = `Time: ${m}:$(s)`
+    if (m < 10) {
+        m = `0${m}`
+    }
+    timeEl.innerHTML = `Time: ${m}:${s}`
     seconds = seconds + 1;
     getRandomLocation()
 }
 
 
-function createInsect(){
+function createInsect() {
 const insect = document.createElement('div')
 insect.classList.add('insect')
 insect.innerHTML = `<img src="${selected_insect.src}" alt = "${selected_insect.alt}">`
-const(x, y) = getRandomLocation()
+const {x, y} = getRandomLocation()
 insect.style.top = `${y}px`
 insect.style.left = `${x}px`
 game_container.appendChild(insect)
@@ -78,7 +80,7 @@ message.classList.add('.visible')
 scoreEl.innerHTML = `Score: ${score}`
 }
 
-function getRandomLocation(){
+function getRandomLocation() {
 const width = window.innerWidth
 const height = window.innerHeight
 console.log(Math.random())
