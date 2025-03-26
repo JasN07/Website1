@@ -132,10 +132,12 @@ justify-content: center;
     transform: translate(-50%, -50%) scale(1);
 }
 
-.insect img {
-width: 100px;
-height: 100px;
+img {
+    width: 100px;
+    height: 100px;
 }
+
+
 
 .insect.caught {
     transform: translate(-50%, -50%) scale(0);
