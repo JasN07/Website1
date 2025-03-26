@@ -38,7 +38,6 @@ h1 {
     justify-content: center;
     height: 100vh;
     width: 100vw;
-
     transition: transform 1s esase-in;
 }
 
