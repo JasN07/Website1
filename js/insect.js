@@ -71,7 +71,7 @@ setTimeout(createInsect, 1500)
 
 function increaseScore() {
 score = score + 1
-if (score == 10) {
+if (score = 10) {
 message.classList.add('.visible')
 }
 scoreEl.innerHTML = `Score: ${score}`
