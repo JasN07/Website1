@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
 
 * {
     box-sizing: border-box;
@@ -7,7 +8,7 @@
 }
 
 body {
-    font-family: '', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: pink;
     padding-bottom: 50px;
 }
@@ -60,8 +61,7 @@ body {
 }
 
 .hero {
-
-    background-image: url('../images/website background nav.avif');
+    background-image: url('images/website background nav.avif');
     background-repeat: no-repeat;
     background-size: color;
     background-position: bottom center;
