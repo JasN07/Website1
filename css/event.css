@@ -61,3 +61,11 @@ body {
     animation: spin .3s linear infinite;
     animation-play-state: paused;
 }
+
+a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: black;
+    text-decoration: none;
+}

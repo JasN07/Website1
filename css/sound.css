@@ -28,3 +28,11 @@ cursor: pointer;
 .btn:hover {
     opacity: 0.9;
 }
+
+a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: black;
+    text-decoration: none;
+}
