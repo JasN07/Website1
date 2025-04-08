@@ -1,3 +1,5 @@
+
+
 const ball = document.createElement('div')
 const ballRadius = 30
 const windowHeight = window.innerHeight
@@ -15,7 +17,6 @@ let LPadelWidth = 10
 let LPadelHeight = 100
 let LPadelSpeed = 5
 
-setInterval(moveBall, 10)
 
 function moveBall(){
     ballXPosition = ballXPosition + ballSpeed * ballXDirection
@@ -45,8 +46,6 @@ if(
 ) {
     ballXDirection = ballXDirection *
     }
-
-
 
 createBall()
 
@@ -97,4 +96,11 @@ function moveLPaddle() {
     LPaddle.style.top = `${LPaddleYPosition}px`
 }
 
+//replacement for set interval
+function animate() {
+    moveBall()
+    moveLPaddle()
+    requestAnimationFrame(animate)
+}
+animate()
 
