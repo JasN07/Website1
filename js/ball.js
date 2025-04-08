@@ -37,6 +37,17 @@ let LPaddleTop = LPaddleYPosition
 let LPaddleBottom = LPaddleYPosition + LPaddleHeight
 let LPaddleRight = LPaddleXPosition + LPaddelWidth
 
+if(
+    (ballBottom >= LPaddleTop) &&
+    (ballTop <= LPaddleBottom) &&
+    (ballLeft <= LPaddleRight) &&
+    (ballXDirection == -1)
+) {
+    ballXDirection = ballXDirection *
+    }
+
+
+
 createBall()
 
 function createBall(){
