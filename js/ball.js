@@ -23,7 +23,7 @@ let level = 1 //display the level and increase the level by 1 every time the sco
 //if the ball gets past your paddle, end the game
 //make the ball stop or disappear and then let the user know that the game is over
 //optional things: sound effects or background music
-//due on monday
+//due on monday, reference the bug game
 
 function moveBall(){
     ballXPosition = ballXPosition + ballSpeed * ballXDirection
