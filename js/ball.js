@@ -17,6 +17,13 @@ let LPadelWidth = 10
 let LPadelHeight = 100
 let LPadelSpeed = 5
 
+let score = 0 //display the score and increase the score by 1 every time the ball hits the paddle
+let level = 1 //display the level and increase the level by 1 every time the score increases by 10
+//as the levels increase, increase the ball speed (playable) (can increase paddle speed too or decrease the paddle size)
+//if the ball gets past your paddle, end the game
+//make the ball stop or disappear and then let the user know that the game is over
+//optional things: sound effects or background music
+//due on monday
 
 function moveBall(){
     ballXPosition = ballXPosition + ballSpeed * ballXDirection
