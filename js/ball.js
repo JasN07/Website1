@@ -69,15 +69,32 @@ LPadel.style.left = "50px"
 LPadel.style.top = `${windowHeight / 2 - LPadelHeight / 2}px`
 }
 
-LPadel.addEventListener('keyup', (event) => {
-    if(event.key == 'w') {
-    if(LPadel)
-    LPadelYPosition = LPadelYPosition - LPadelSpeed
+document.addEventListener('keydown', (event) => {
+    if (event.key == 'w') {
+        wKey = true
     }
-    if(event.key == 's') {
-        if(LPadelYPosition >= windowHeight - LPadelHeight) {
-            LPadelYPosition = LPadelYPosition - LPadelHeight
+    if (event.key == 's') {
+        sKey = true
     }
+})
+
+document.addEventListener('keyup', (event) => {
+    if (event.key == 'w') {
+        wKey = false
     }
-    LPadel.style.top = `${LPadelYPosition}px`
-    })
+    if (event.key == 's') {
+        sKey = false
+    }
+})
+
+function moveLPaddle() {
+    if (wKey == true && LPaddleYPosition > 0) {
+    LPaddleYPosition = LPaddleYPosition - LPaddleSpeed
+    }
+    if (sKey == true && LPaddleYPosition < windowHeight - LPaddleHeight) {
+    LPaddleYPosition = LPaddleYPosition + LPaddleSpeed
+    }
+    LPaddle.style.top = `${LPaddleYPosition}px`
+}
+
+
