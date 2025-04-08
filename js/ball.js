@@ -10,7 +10,7 @@ let ballSpeed = 5
 let ballxDirection =
 const LPadel = document.createElement('div')
 document.body.appendChild(LPadel)
-let LPadelWidth = 20
+let LPadelWidth = 10
 let LPadelHeight = 100
 let LPadelSpeed = 5
 let
