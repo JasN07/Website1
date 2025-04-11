@@ -41,10 +41,21 @@ function createBall(){
     ball.style.backgroundColor = "Lavender"
     ball.style.position = "absolute"
     ball.style.top = `${windowHeight/2 - ballRadius}px`
-    ball.style.left = `${windowWidth/2 - ballRadius}px`
+    ball.style.left = `${ballXPosition}px`
 }
 
-
+function moveBall(){
+    ballXPosition = ballXPosition + ballSpeed * ballXDirection
+    ballYPosition = ballYPosition + ballSpeed * ballYDirection
+    ball.style.left = `${ballXPosition}px'
+    ball.style.top = `${ballYPosition}px`
+    if (ballXPosition < 0 || ballXPosition > windowWidth - 2 * ballRadius){
+    ballXDirection = ballXDirection * -1
+    }
+    if (ballYPosition < 0 || ballYPosition > windowWidth - 2 * ballRadius){
+    ballYDirection = ballYDirection * -1
+    }
+}
 
 
 
@@ -80,19 +91,6 @@ function increaseScore() {
     scoreEl.innerHTML = `Score: ${score}`
     }
 
-function moveBall(){
-    ballXPosition = ballXPosition + ballSpeed * ballXDirection
-    ballYPosition = ballYPosition + ballSpeed * ballYDirection
-    ball.style.left = `${ballXPosition}px'
-    ball.style.top = `${ballYPosition}px`
-    if (ballYPosition < 0 || ballYPosition > windowWidth - 2 * ballRadius){
-    ballYDirection = ballYDirection * -1
-    }
-    if (ballXPosition < 0 || ballXPosition > windowWidth - 2 * ballRadius){
-    ballXDirection = ballXDirection * -1
-    }
-}
-
 let ballTop = ballYPosition
 let ballBottom = ballYPosition + 2 * ballRadius
 let ballLeft = ballXPosition
@@ -109,17 +107,6 @@ if(
     ballXDirection = ballXDirection *
     }
 
-createBall()
-
-function createBall(){
-    ball.style.height = `${2 * ballRadius}`
-    ball.style.width = `${2 * ballRadius}`
-    ball.style.borderRadius = "50%"
-    ball.style.backgroundColor = "Lavender"
-    ball.style.position = "absolute"
-    ball.style.top = `${windowHeight/2 - ballRadius}px`
-    ball.style.left = `${windowWidth/2 - ballRadius}px`
-}
 
 create LPadel() {
 LPadel.style.height = `${LPadelHeight}px`
