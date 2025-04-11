@@ -35,8 +35,8 @@ let level = 1 //display the level and increase the level by 1 every time the sco
 createBall()
 
 function createBall(){
-    ball.style.height = `${2 * ballRadius}`
-    ball.style.width = `${2 * ballRadius}`
+    ball.style.height = `${2 * ballRadius}px`
+    ball.style.width = `${2 * ballRadius}px`
     ball.style.borderRadius = "50%"
     ball.style.backgroundColor = "Lavender"
     ball.style.position = "absolute"
