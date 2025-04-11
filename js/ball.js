@@ -2,9 +2,12 @@ const ball = document.createElement('div')
 const ballRadius = 30
 const windowHeight = window.innerHeight
 const windowWidth = window.innerWidth
+
 let ballYPosition = windowWidth/2 - ballRadius
 let ballXPosition = windowWidth/2 - ballRadius
+
 document.body.appendChild(ball)
+
 const Lpadel = document.
 let ballSpeed = 5
 let ballXDirection = 1
@@ -27,6 +30,25 @@ let level = 1 //display the level and increase the level by 1 every time the sco
 //make the ball stop or disappear and then let the user know that the game is over
 //optional things: sound effects or background music
 //due on monday, reference the bug game
+
+
+createBall()
+
+function createBall(){
+    ball.style.height = `${2 * ballRadius}`
+    ball.style.width = `${2 * ballRadius}`
+    ball.style.borderRadius = "50%"
+    ball.style.backgroundColor = "Lavender"
+    ball.style.position = "absolute"
+    ball.style.top = `${windowHeight/2 - ballRadius}px`
+    ball.style.left = `${windowWidth/2 - ballRadius}px`
+}
+
+
+
+
+
+
 
 function startGame() {
     setInterval(increaseTime, 1000)
