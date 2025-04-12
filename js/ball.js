@@ -24,6 +24,7 @@ let ballYDirection = 1
 let seconds = 0
 let score = 0 //display the score and increase the score by 1 every time the ball hits the paddle
 let level = 1 //display the level and increase the level by 1 every time the score increases by 10
+let isGameOver = false;
 //as the levels increase, increase the ball speed (playable) (can increase paddle speed too or decrease the paddle size)
 //if the ball gets past your paddle, end the game
 //make the ball stop or disappear and then let the user know that the game is over
@@ -31,10 +32,17 @@ let level = 1 //display the level and increase the level by 1 every time the sco
 //due on monday, reference the bug game
 
 function moveBall() {
+    if (isGameOver) return;
+
     ballXPosition = ballXPosition + ballSpeed * ballXDirection
     ballYPosition = ballYPosition + ballSpeed * ballYDirection
     ball.style.left = `${ballXPosition}px`
     ball.style.top = `${ballYPosition}px`
+
+    if (ballXPosition <= 0) {
+        endGame()
+    }
+
     if (ballXPosition < 0 || ballXPosition > windowWidth - 2 * ballRadius){
     ballXDirection = ballXDirection * -1
     }
@@ -65,9 +73,6 @@ let LPaddleRight = LPaddleXPosition + LPaddleWidth
             LPaddleSpeed += 0.5
             document.getElementById('level').innerText = `Level: ${level}`
         }
-    }
-    if (ballXPosition <= 0) {
-        endGame()
     }
 }
 
@@ -136,32 +141,34 @@ function hitBall() {
 }
 
 function endGame() {
-    // Makes the ball disappear
-    ball.style.display = 'none'
+    isGameOver = true;  // Flag to stop the game loop
 
-    isGameOver = true
+    // Hide the ball
+    ball.style.display = 'none';
 
-    //Game over banner
-    const gameOverBanner = document.createElement('div')
-    gameOverBanner.innerText = 'Game Over'
-    gameOverBanner.style.position = 'absolute'
-    gameOverBanner.style.top = '-100px'
-    gameOverBanner.style.left = '50%'
-    gameOverBanner.style.transform = 'translateX(-50%)'
-    gameOverBanner.style.fontSize = '48px'
-    gameOverBanner.style.color = 'white'
-    gameOverBanner.style.fontFamily = 'Arial, sans-serif'
-    gameOverBanner.style.textAlign = 'center'
-    document.body.appendChild(gameOverBanner)
+    // Create the Game Over banner
+    const gameOverBanner = document.createElement('div');
+    gameOverBanner.innerText = 'Game Over';
+    gameOverBanner.style.position = 'absolute';
+    gameOverBanner.style.top = '-100px';  // Start above the screen
+    gameOverBanner.style.left = '50%';
+    gameOverBanner.style.transform = 'translateX(-50%)';
+    gameOverBanner.style.fontSize = '48px';
+    gameOverBanner.style.color = 'white';
+    gameOverBanner.style.fontFamily = 'Arial, sans-serif';
+    gameOverBanner.style.textAlign = 'center';
+    document.body.appendChild(gameOverBanner);
 
-    let position = -100
+    // Animate the banner to drop down
+    let position = -100;  // Initial position above the screen
     let dropInterval = setInterval(() => {
-        if (position < windowHeight / 2 - 24) {
-            position += 5
-            gameOverBanner.style.top = `${position}px`
+        if (position < windowHeight / 2 - 24) {  // Stop when it's in the center
+            position += 5;
+            gameOverBanner.style.top = `${position}px`;
         } else {
-            clearInterval(dropInterval)
+            clearInterval(dropInterval);  // Stop the animation when it's dropped
         }
-    }, 10)
+    }, 10);  // Adjust the speed of the drop by changing the interval
 }
+
 
