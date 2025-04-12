@@ -56,6 +56,8 @@ let LPaddleRight = LPaddleXPosition + LPaddleWidth
         (ballXDirection == -1)
     ) {
         ballXDirection = ballXDirection * -1
+        score = score + 1
+        document.getElementById('score').innerText = `Score: ${score}`
     }
 }
 
