@@ -76,8 +76,8 @@ function createLPaddle() {
     LPaddle.style.width = `${LPaddleWidth}px`
     LPaddle.style.backgroundColor = 'pink'
     LPaddle.style.position = 'absolute'
-    LPaddle.style.left = `${LPaddleYPosition}px`
-    LPaddle.style.top = `${LPaddleXPosition}px`
+    LPaddle.style.left = `${LPaddleXPosition}px`
+    LPaddle.style.top = `${LPaddleYPosition}px`
 }
 
 wKey = false
