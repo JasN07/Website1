@@ -21,9 +21,6 @@ let ballXDirection = 1
 let ballYDirection = 1
 
 //Extra assignments
-const scoreEl = document.getElementById('score')
-const message = document.getElementById('message')
-const timeEl = document.getElementById('time')
 let seconds = 0
 let score = 0 //display the score and increase the score by 1 every time the ball hits the paddle
 let level = 1 //display the level and increase the level by 1 every time the score increases by 10
@@ -83,6 +80,8 @@ function createLPaddle() {
     LPaddle.style.top = `${LPaddleXPosition}px`
 }
 
+wKey = false
+sKey = false
 document.addEventListener('keydown', (event) => {
     if (event.key == 'w') {
         wKey = true
@@ -91,15 +90,6 @@ document.addEventListener('keydown', (event) => {
         sKey = true
     }
 })
-
-
-
-
-
-
-
-
-
 document.addEventListener('keyup', (event) => {
     if (event.key == 'w') {
         wKey = false
@@ -109,74 +99,16 @@ document.addEventListener('keyup', (event) => {
     }
 })
 
-
-
-
-
-
-
-function startGame() {
-    setInterval(increaseTime, 1000)
-}
-
-function increaseTime() {
-    let s = seconds % 60
-    let m = Math.floor(seconds / 60)
-    if (s < 10) {
-        s = `0${s}`
-    }
-    if (m < 10) {
-        m = `0${m}`
-    }
-    timeEl.innerHTML = `Time: ${m}:${s}`
-    seconds = seconds + 1;
-}
-
-function hitBall() {
-    increaseScore()
-    this.classList.add(`hit`)
-}
-
-function increaseScore() {
-    score = score + 1
-    if (score == 10) {
-        message.classList.add('visible')
-    }
-    scoreEl.innerHTML = `Score: ${score}`
-    }
-
-
-if(
-    (ballBottom >= LPaddleTop) &&
-    (ballTop <= LPaddleBottom) &&
-    (ballLeft <= LPaddleRight) &&
-    (ballXDirection == -1)
-) {
-    ballXDirection = ballXDirection *
-    }
-
-
-document.addEventListener('keydown', (event) => {
-    if (event.key == 'w') {
-        wKey = true
-    }
-    if (event.key == 's') {
-        sKey = true
-    }
-})
-
-
 function moveLPaddle() {
     if (wKey == true && LPaddleYPosition > 0) {
-    LPaddleYPosition = LPaddleYPosition - LPaddleSpeed
+        LPaddleYPosition = LPaddleYPosition - LPaddleSpeed
     }
     if (sKey == true && LPaddleYPosition < windowHeight - LPaddleHeight) {
-    LPaddleYPosition = LPaddleYPosition + LPaddleSpeed
+        LPaddleYPosition = LPaddleYPosition + LPaddleSpeed
     }
     LPaddle.style.top = `${LPaddleYPosition}px`
 }
 
-//replacement for set interval
 function animate() {
     moveBall()
     moveLPaddle()
@@ -184,3 +116,7 @@ function animate() {
 }
 animate()
 
+function hitBall() {
+    increaseScore()
+    this.classList.add(`hit`)
+}
