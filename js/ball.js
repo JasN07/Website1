@@ -22,14 +22,9 @@ let ballYDirection = 1
 
 //Extra assignments
 let seconds = 0
-let score = 0 //display the score and increase the score by 1 every time the ball hits the paddle
-let level = 1 //display the level and increase the level by 1 every time the score increases by 10
+let score = 0
+let level = 1
 let isGameOver = false;
-//as the levels increase, increase the ball speed (playable) (can increase paddle speed too or decrease the paddle size)
-//if the ball gets past your paddle, end the game
-//make the ball stop or disappear and then let the user know that the game is over
-//optional things: sound effects or background music
-//due on monday, reference the bug game
 
 function moveBall() {
     if (isGameOver) return;
@@ -70,8 +65,8 @@ let LPaddleRight = LPaddleXPosition + LPaddleWidth
 
         if (score % 10 === 0) {
             level = level + 1
-            ballSpeed += 1
-            LPaddleSpeed += 0.5
+            ballSpeed = ballSpeed + 1
+            LPaddleSpeed = LPaddleSpeed + 0.5
             document.getElementById('level').innerText = `Level: ${level}`
         }
     }
@@ -142,24 +137,21 @@ function hitBall() {
 }
 
 function endGame() {
-    isGameOver = true;  // Flag to stop the game loop
+    isGameOver = true;
 
-    // Hide the ball
+    //Removes the ball
     ball.style.display = 'none';
 
-    // Create the Game Over banner
     const gameOverBanner = document.createElement('div');
     gameOverBanner.innerText = 'Game Over';
-    gameOverBanner.classList.add('game-over-banner');  // Add the CSS class to the banner
+    gameOverBanner.classList.add('game-over-banner');
 
-    // Append to the body
     document.body.appendChild(gameOverBanner);
 
-    // Set a timeout to make the banner visible and animate
     setTimeout(() => {
-        gameOverBanner.style.visibility = 'visible';  // Make the banner visible
-        gameOverBanner.style.top = '50%';  // Move the banner to the center
-    }, 50);  // Delay to ensure the styles are applied after the element is appended
+        gameOverBanner.style.visibility = 'visible';
+        gameOverBanner.style.top = '50%';
+    }, 50);
 }
 
 
