@@ -64,6 +64,10 @@ let LPaddleRight = LPaddleXPosition + LPaddleWidth
             ballSpeed += 1
             LPaddleSpeed += 0.5
             document.getElementById('level').innerText = `Level: ${level}`
+        }
+    }
+    if (ballXPosition <= 0) {
+        endGame()
     }
 }
 
@@ -118,9 +122,11 @@ function moveLPaddle() {
 }
 
 function animate() {
+    if (!isGameOver) {
     moveBall()
     moveLPaddle()
     requestAnimationFrame(animate)
+    }
 }
 animate()
 
@@ -128,3 +134,34 @@ function hitBall() {
     increaseScore()
     this.classList.add(`hit`)
 }
+
+function endGame() {
+    // Makes the ball disappear
+    ball.style.display = 'none'
+
+    isGameOver = true
+
+    //Game over banner
+    const gameOverBanner = document.createElement('div')
+    gameOverBanner.innerText = 'Game Over'
+    gameOverBanner.style.position = 'absolute'
+    gameOverBanner.style.top = '-100px'
+    gameOverBanner.style.left = '50%'
+    gameOverBanner.style.transform = 'translateX(-50%)'
+    gameOverBanner.style.fontSize = '48px'
+    gameOverBanner.style.color = 'white'
+    gameOverBanner.style.fontFamily = 'Arial, sans-serif'
+    gameOverBanner.style.textAlign = 'center'
+    document.body.appendChild(gameOverBanner)
+
+    let position = -100
+    let dropInterval = setInterval(() => {
+        if (position < windowHeight / 2 - 24) {
+            position += 5
+            gameOverBanner.style.top = `${position}px`
+        } else {
+            clearInterval(dropInterval)
+        }
+    }, 10)
+}
+
