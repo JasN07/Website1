@@ -58,6 +58,12 @@ let LPaddleRight = LPaddleXPosition + LPaddleWidth
         ballXDirection = ballXDirection * -1
         score = score + 1
         document.getElementById('score').innerText = `Score: ${score}`
+
+        if (score % 10 === 0) {
+            level++
+            ballSpeed += 1
+            LPaddleSpeed += 0.5
+            document.getElementById('level').innerText = `Level: ${level}`
     }
 }
 
