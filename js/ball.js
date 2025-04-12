@@ -33,7 +33,7 @@ let level = 1 //display the level and increase the level by 1 every time the sco
 //optional things: sound effects or background music
 //due on monday, reference the bug game
 
-function moveBall(){
+function moveBall() {
     ballXPosition = ballXPosition + ballSpeed * ballXDirection
     ballYPosition = ballYPosition + ballSpeed * ballYDirection
     ball.style.left = `${ballXPosition}px'
@@ -44,7 +44,6 @@ function moveBall(){
     if (ballYPosition < 0 || ballYPosition > windowHeight - 2 * ballRadius){
     ballYDirection = ballYDirection * -1
     }
-}
 
 let ballTop = ballYPosition
 let ballBottom = ballYPosition + 2 * ballRadius
@@ -53,7 +52,15 @@ let LPaddleTop = LPaddleYPosition
 let LPaddleBottom = LPaddleYPosition + LPaddleHeight
 let LPaddleRight = LPaddleXPosition + LPaddleWidth
 
-
+    if(
+        (ballBottom >= LPaddleTop) &&
+        (ballTop <= LPaddleBottom) &&
+        (ballLeft <= LPaddleRight) &&
+        (ballXDirection == -1)
+    ) {
+        ballXDirection = ballXDirection * -1
+    }
+}
 
 createBall()
 function createBall(){
@@ -66,14 +73,32 @@ function createBall(){
     ball.style.left = `${ballXPosition}px`
 }
 
+createLPaddle()
 function createLPaddle() {
     LPaddle.style.height = `${LPaddleHeight}px`
     LPaddle.style.width = `${LPaddleWidth}px`
     LPaddle.style.backgroundColor = 'pink'
     LPaddle.style.position = 'absolute'
-    LPaddle.style.left = "50px"
-    LPaddle.style.top = `${windowHeight / 2 - LPaddleHeight / 2}px`
+    LPaddle.style.left = `${LPaddleYPosition}px`
+    LPaddle.style.top = `${LPaddleXPosition}px`
 }
+
+document.addEventListener('keydown', (event) => {
+    if (event.key == 'w') {
+        wKey = true
+    }
+    if (event.key == 's') {
+        sKey = true
+    }
+})
+
+
+
+
+
+
+
+
 
 document.addEventListener('keyup', (event) => {
     if (event.key == 'w') {
