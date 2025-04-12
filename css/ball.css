@@ -21,3 +21,17 @@
     font-size: 20px;
     z-index: 1000;
   }
+
+.game-over-banner {
+    position: absolute;
+    top: -100px; /* Start off-screen */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    z-index: 1000; /* Ensure it's on top of other content */
+    visibility: hidden; /* Initially hidden */
+    transition: top 1s ease-in-out; /* Smooth transition for dropping */
+}

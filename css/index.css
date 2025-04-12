@@ -35,3 +35,34 @@ h1 {
 ul {
     text-align: center;
 }
+
+function endGame() {
+    isGameOver = true;  // Flag to stop the game loop
+
+    // Hide the ball
+    ball.style.display = 'none';
+
+    // Create the Game Over banner
+    const gameOverBanner = document.createElement('div');
+    gameOverBanner.innerText = 'Game Over';
+    gameOverBanner.style.position = 'absolute';
+    gameOverBanner.style.top = '-100px';  // Start above the screen
+    gameOverBanner.style.left = '50%';
+    gameOverBanner.style.transform = 'translateX(-50%)';
+    gameOverBanner.style.fontSize = '48px';
+    gameOverBanner.style.color = 'white';
+    gameOverBanner.style.fontFamily = 'Arial, sans-serif';
+    gameOverBanner.style.textAlign = 'center';
+    document.body.appendChild(gameOverBanner);
+
+    // Animate the banner to drop down
+    let position = -100;  // Initial position above the screen
+    let dropInterval = setInterval(() => {
+        if (position < windowHeight / 2 - 24) {  // Stop when it's in the center
+            position += 5;
+            gameOverBanner.style.top = `${position}px`;
+        } else {
+            clearInterval(dropInterval);  // Stop the animation when it's dropped
+        }
+    }, 10);  // Adjust the speed of the drop by changing the interval
+}

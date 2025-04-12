@@ -149,26 +149,16 @@ function endGame() {
     // Create the Game Over banner
     const gameOverBanner = document.createElement('div');
     gameOverBanner.innerText = 'Game Over';
-    gameOverBanner.style.position = 'absolute';
-    gameOverBanner.style.top = '-100px';  // Start above the screen
-    gameOverBanner.style.left = '50%';
-    gameOverBanner.style.transform = 'translateX(-50%)';
-    gameOverBanner.style.fontSize = '48px';
-    gameOverBanner.style.color = 'white';
-    gameOverBanner.style.fontFamily = 'Arial, sans-serif';
-    gameOverBanner.style.textAlign = 'center';
+    gameOverBanner.classList.add('game-over-banner');  // Add the CSS class to the banner
+
+    // Append to the body
     document.body.appendChild(gameOverBanner);
 
-    // Animate the banner to drop down
-    let position = -100;  // Initial position above the screen
-    let dropInterval = setInterval(() => {
-        if (position < windowHeight / 2 - 24) {  // Stop when it's in the center
-            position += 5;
-            gameOverBanner.style.top = `${position}px`;
-        } else {
-            clearInterval(dropInterval);  // Stop the animation when it's dropped
-        }
-    }, 10);  // Adjust the speed of the drop by changing the interval
+    // Set a timeout to make the banner visible and animate
+    setTimeout(() => {
+        gameOverBanner.style.visibility = 'visible';  // Make the banner visible
+        gameOverBanner.style.top = '50%';  // Move the banner to the center
+    }, 50);  // Delay to ensure the styles are applied after the element is appended
 }
 
 
