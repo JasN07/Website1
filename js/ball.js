@@ -40,7 +40,8 @@ function moveBall() {
     ball.style.top = `${ballYPosition}px`
 
     if (ballXPosition <= 0) {
-        endGame()
+        endGame();
+        return;
     }
 
     if (ballXPosition < 0 || ballXPosition > windowWidth - 2 * ballRadius){
@@ -160,5 +161,6 @@ function endGame() {
         gameOverBanner.style.top = '50%';  // Move the banner to the center
     }, 50);  // Delay to ensure the styles are applied after the element is appended
 }
+
 
 
