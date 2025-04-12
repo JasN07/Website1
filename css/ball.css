@@ -29,7 +29,7 @@
     left: 50%;
     transform: translateX(-50%);
     font-size: 48px;
-    color: white;
+    color: pink;
     font-family: Arial, sans-serif;
     text-align: center;
     z-index: 1000; /* Ensure it's on top of other content */
